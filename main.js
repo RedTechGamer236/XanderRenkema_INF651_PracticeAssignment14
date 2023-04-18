@@ -23,21 +23,27 @@ const jsonData = [
     id: 1,
     name: "Leanne Graham",
     username: "Bret",
-    email: "Sincere@april.biz"
+    email: "Sincere@april.biz",
   },
   {
     id: 2,
     name: "Ervin Howell",
     username: "Antonette",
-    email: "Shanna@melissa.tv"
+    email: "Shanna@melissa.tv",
   },
   {
     id: 3,
     name: "Clementine Bauch",
     username: "Samantha",
-    email: "Nathan@yesenia.net"
-  }
+    email: "Nathan@yesenia.net",
+  },
 ];
+
+function justEmails(data) {
+  let emails = [];
+  data.forEach((element) => emails.push(element.email));
+  return emails;
+}
 
 //////////////////
 // HINT:
@@ -62,6 +68,10 @@ const jsonData = [
 // Use this array to test your function:
 const testingArray = [1, 2, 4, 17, 19, 20, 21];
 
+function onlyOdd(numberArray) {
+  return numberArray.filter((element) => element % 2 === 1);
+}
+
 // 3) Create a function named "makeThemOdd".
 // The function should accept a parameter
 // named "numberArray".
@@ -76,6 +86,13 @@ const testingArray = [1, 2, 4, 17, 19, 20, 21];
 // You can use the testing array from #2
 // to test your function.
 
+function makeThemOdd(numberArray) {
+  return numberArray.map((element) => {
+    if (element % 2 === 0) return element + 1;
+    else return element;
+  });
+}
+
 // 4) Create a function named "totalAll".
 // The function should accept a parameter
 // named "numberArray".
@@ -85,3 +102,9 @@ const testingArray = [1, 2, 4, 17, 19, 20, 21];
 /////////////
 // You can use the testing array from #2
 // to test your function.
+
+function totalAll(numberArray) {
+  return numberArray.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,0
+  );
+}
